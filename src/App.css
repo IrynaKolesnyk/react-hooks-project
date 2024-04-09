@@ -42,3 +42,9 @@ ol {
   flex-direction: column;
   align-items: flex-start;
 }
+
+.tokenHookContainer{
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgb(163, 161, 161);
+}
