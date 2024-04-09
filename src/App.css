@@ -44,7 +44,10 @@ ol {
 }
 
 .tokenHookContainer{
+  margin-top: 20px;
   margin-bottom: 20px;
+  padding-top: 10px;
   padding-bottom: 10px;
+  border-top: 1px solid rgb(163, 161, 161);
   border-bottom: 1px solid rgb(163, 161, 161);
 }
