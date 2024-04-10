@@ -53,10 +53,11 @@ ol {
 }
 
 .viewportSizeContainer{
-    margin-bottom: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid rgb(163, 161, 161);
+  margin-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgb(163, 161, 161);
+  border-top: 1px solid rgb(163, 161, 161);
 }
 
 .scrollPositionContainer{
@@ -66,4 +67,9 @@ ol {
   background-color: #fff;
   border: 1px solid rgb(163, 161, 161);
   padding: 5px;
+}
+
+.toggleButton{
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
