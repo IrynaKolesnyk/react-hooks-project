@@ -58,3 +58,12 @@ ol {
     padding-bottom: 10px;
     border-bottom: 1px solid rgb(163, 161, 161);
 }
+
+.scrollPositionContainer{
+  position: fixed;
+  top: 50%;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid rgb(163, 161, 161);
+  padding: 5px;
+}
