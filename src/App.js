@@ -1,20 +1,43 @@
-import FetchData from "./components/FetchData";
-import LocalStorageToken from "./components/LocalStorageToken";
-import Hover from "./components/Hover";
-import ViewportSize from "./components/ViewportSize";
-import ScrollPosition from "./components/ScrollPosition";
-import "./App.css";
-import Toggle from "./components/Toggle";
+import { Link, Route, Routes } from 'react-router-dom';
+import FetchData from './components/FetchData';
+import LocalStorageToken from './components/LocalStorageToken';
+import Hover from './components/Hover';
+import ViewportSize from './components/ViewportSize';
+import ScrollPosition from './components/ScrollPosition';
+import Toggle from './components/Toggle';
+import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <Toggle />
-      <ScrollPosition />
-      <ViewportSize />
-      <Hover />
-      <LocalStorageToken />
-      <FetchData />
+      <ol>
+        <li>
+          <Link to="/fetch-data">Fetch data</Link>
+        </li>
+        <li>
+          <Link to="/toggle">Toggle</Link>
+        </li>
+        <li>
+          <Link to="/scroll-position">Scroll position</Link>
+        </li>
+        <li>
+          <Link to="/viewport-size">Viewport size</Link>
+        </li>
+        <li>
+          <Link to="/hover">Hover</Link>
+        </li>
+        <li>
+          <Link to="/local-storage-token">Local storage token</Link>
+        </li>
+      </ol>
+      <Routes>
+        <Route path="/fetch-data" element={<FetchData />} />
+        <Route path="/toggle" element={<Toggle />} />
+        <Route path="/scroll-position" element={<ScrollPosition />} />
+        <Route path="/viewport-size" element={<ViewportSize />} />
+        <Route path="/hover" element={<Hover />} />
+        <Route path="/local-storage-token" element={<LocalStorageToken />} />
+      </Routes>
     </div>
   );
 }
