@@ -1,7 +1,7 @@
 import useToggle from '../hooks/useToggle';
 
 const Toggle = () => {
-  const [value, toggle] = useToggle();
+  const [value, toggle] = useToggle(['blue', 'orange', 'cyan', 'teal']);
 
   return (
     <button className="toggleButton" onClick={() => toggle()}>

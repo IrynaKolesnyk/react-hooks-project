@@ -1,12 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 const useWindowScroll = () => {
   const [scroll, setScroll] = useState({ x: 0, y: 0 });
 
-  const scrollTo = ({ y }) => {
+  const scrollTo = ({ x, y }) => {
+    if (typeof window === 'undefined') return;
     window.scrollTo({
       top: y,
-      behavior: "smooth",
+      left: x,
+      behavior: 'smooth',
     });
   };
 
@@ -15,10 +17,10 @@ const useWindowScroll = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 

@@ -1,10 +1,8 @@
 import { useEffect, useState } from 'react';
 
-const useToggle = initialValue => {
+const useToggle = (initialValue = [false, true]) => {
   const [index, setIndex] = useState(0);
   const [value, setValue] = useState(null);
-
-  if (!initialValue) initialValue = [true, false];
 
   const toggle = () => {
     const isArray = Array.isArray(initialValue);

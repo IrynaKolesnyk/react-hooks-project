@@ -1,11 +1,16 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-export const useLocalStorage = (key) => {
-  const [token, setToken] = useState(null);
+export const useLocalStorage = key => {
+  const [token, setToken] = useState(
+    () => localStorage.getItem(key) ?? null,
+  );
 
-  const setItem = (value) => {
-    localStorage.setItem(key, JSON.stringify(value));
+  const setItem = value => {
     setToken(value);
+    localStorage.setItem(
+      key,
+      JSON.stringify(value),
+    );
   };
 
   const removeItem = () => {

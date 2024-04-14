@@ -1,18 +1,13 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 export const useHover = () => {
   const [hovered, setHovered] = useState(false);
   const ref = useRef(null);
 
-  const handleMouseOver = () => {
-    setHovered(true);
-  };
+  const handleMouseOver = useCallback(() => setHovered(true), []);
+  const handleMouseOut = useCallback(() => setHovered(false), []);
 
-  const handleMouseOut = () => {
-    setHovered(false);
-  };
-
-  const handleMouseMove = (event) => {
+  const handleMouseMove = event => {
     if (!ref.current) return;
     const rect = ref.current.getBoundingClientRect();
     const x = event.clientX;
@@ -25,13 +20,13 @@ export const useHover = () => {
   useEffect(() => {
     if (!ref.current) return;
     const element = ref.current;
-    element.addEventListener("mouseover", handleMouseOver);
-    element.addEventListener("mouseout", handleMouseOut);
-    element.addEventListener("mousemove", handleMouseMove);
+    element.addEventListener('mouseover', handleMouseOver);
+    element.addEventListener('mouseout', handleMouseOut);
+    element.addEventListener('mousemove', handleMouseMove);
     return () => {
-      element.removeEventListener("mouseover", handleMouseOver);
-      element.removeEventListener("mouseout", handleMouseOut);
-      element.removeEventListener("mousemove", handleMouseMove);
+      element.removeEventListener('mouseover', handleMouseOver);
+      element.removeEventListener('mouseout', handleMouseOut);
+      element.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
 
