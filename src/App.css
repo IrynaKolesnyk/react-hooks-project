@@ -73,3 +73,59 @@ ol {
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
+.form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.input{
+  box-sizing: border-box;
+  width: 100%;
+  padding: 5px 5px;
+}
+
+.formInput{
+  margin-bottom: 10px;
+}
+
+.commonLabel{
+  display: block;
+  font-weight: bold;
+}
+
+.radioButtonsWrapper{
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.submitBtn{
+  display: block;
+  font-weight: bold;
+}
+
+.inputWithIcon {
+  position: relative;
+  
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 4px;
+      bottom: -2px;
+      margin: auto 0;
+      width: 14px;
+      height: 14px;
+      background: url('./images/icons/At-Sign-Transparent.png') no-repeat;
+      background-size: cover;
+    }
+    input {
+      padding-left: 20px;
+    }
+}
